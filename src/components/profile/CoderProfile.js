@@ -1,5 +1,5 @@
 import React,{ useState, useEffect } from "react";
-import { getUserById } from "../../managers/CoderManager";
+import { getCurrentUser } from "../../managers/CoderManager.js";
 import { useParams } from "react-router-dom";
 
 
@@ -11,8 +11,8 @@ export const SingleProfile = (props) => {
     
 
     useEffect(() => {
-        getUserById(userId).then(data => setProfile(data));
-    }, [userId])
+        getCurrentUser().then(data => setProfile(data));
+    }, [])
 
     return (
         <article className="profile">
