@@ -14,7 +14,8 @@ export const NavBar = () => {
                 
             </li>
             <li className="navbar__item">
-                Navigation link
+                <Link className="nav-link" to="/post_form">Create Post</Link>
+                
             </li>
             {
                 (localStorage.getItem("lu_token") !== null) ?
