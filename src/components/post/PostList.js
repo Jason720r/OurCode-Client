@@ -24,4 +24,3 @@ export const PostList = (props) => {
         </article>
     )
 }
-//Work on line 18 regarding poster/user first name property

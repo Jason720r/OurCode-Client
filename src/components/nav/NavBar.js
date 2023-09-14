@@ -10,7 +10,8 @@ export const NavBar = () => {
                 
             </li>
             <li className="navbar__item">
-                Navigation link
+                <Link className="nav-link" to="/events">Event List</Link>
+                
             </li>
             <li className="navbar__item">
                 Navigation link
