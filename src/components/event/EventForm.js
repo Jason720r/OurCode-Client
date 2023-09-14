@@ -24,9 +24,7 @@ export const EventForm = () => {
 
     useEffect(() => {
         getCurrentUser()
-            .then(users => {
-                const currentUser = users[0];
-
+            .then(currentUser => {
                 setCurrentEvent(prevState => ({
                     ...prevState,
                     organizer: currentUser.id

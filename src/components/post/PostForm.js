@@ -16,16 +16,13 @@ export const PostForm = () => {
 
     useEffect(() => {
         getCurrentUser()
-            .then(users => {
-                const currentUser = users[0];
-
+            .then(currentUser => {
                 setCurrentPost(prevState => ({
                     ...prevState,
-                    poster: currentUser.id
+                    organizer: currentUser.id
                 }))
             })
-        
-    }, []);
+    }, [])
 
     const changePostState = (domEvent) => {
         const newPostState = { ...currentPost }
