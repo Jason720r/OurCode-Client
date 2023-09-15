@@ -23,3 +23,18 @@ export const createPost = (post) => {
         return response.json();
     });
 }
+
+export const deletePost = (postId) => {
+    return fetch(`http://localhost:8000/posts/${postId}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to delete post");
+        }
+        })
+        .catch(error => console.error("Network error:", error));
+}

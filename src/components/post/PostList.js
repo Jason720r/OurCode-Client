@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getPosts } from "../../managers/PostManager.js"
 import { useNavigate } from "react-router-dom";
+import { deletePost } from "../../managers/PostManager.js";
 
 export const PostList = (props) => {
     const [posts, setPosts] = useState([]);
@@ -8,7 +9,17 @@ export const PostList = (props) => {
 
     useEffect(() => {
         getPosts().then(data => setPosts(data));
-    }, []);
+    }, [])
+
+    const handleDeletePost = (postId) => {
+        deletePost(postId)
+        .then(() => getPosts())
+        .then(setPosts)
+        .catch(error => {
+            console.error("Error deleting post: ", error);
+            alert("There was an error deleting the post. Please try again.");
+        })
+    }
 
     return (
         <article className="posts">
@@ -18,6 +29,8 @@ export const PostList = (props) => {
                         <div className="post__title">{post.title} by {post.poster.user.first_name}</div>
                         <div className="post__description">Description: {post.description}</div>
                         <div className="post__date">Date: {post.date}</div>
+
+                        <button onClick={() => handleDeletePost(post.id)}>Delete Post</button>
                     </section>
                 })
             }
