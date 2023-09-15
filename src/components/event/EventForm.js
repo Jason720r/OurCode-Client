@@ -39,11 +39,11 @@ export const EventForm = () => {
     }
     return (
         <form className="eventForm">
-            <button className="btn btn-2 btn-sep icon-create"
+            {/* <button className="btn btn-2 btn-sep icon-create"
     onClick={() => {
         navigate({ pathname: "/events/new"})
     }}
->Create Event</button>
+>Create Event</button> */}
              <fieldset>
                 <div className="form-group">
                     <label htmlFor="name">Name: </label>
@@ -109,7 +109,7 @@ export const EventForm = () => {
                         createEvent(event)
                             .then(() => navigate("/events"))
                     }}
-                    className="btn btn-primary">Create Event</button>
+                    className="btn btn-2 btn-sep icon-create">Create Event</button>
              </fieldset>
         </form>
     )
