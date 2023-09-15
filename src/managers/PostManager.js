@@ -7,6 +7,15 @@ export const getPosts = () => {
     .then(response => response.json())
 }
 
+export const getPostById = (postId) => {
+    return fetch(`http://localhost:8000/posts/${postId}`, {
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        }
+    })
+        .then(response => response.json())
+}
+
 export const createPost = (post) => {
     return fetch("http://localhost:8000/posts", {
         method: "POST",
@@ -37,4 +46,21 @@ export const deletePost = (postId) => {
         }
         })
         .catch(error => console.error("Network error:", error));
+}
+
+export const updatePost = (post) => {
+    return fetch(`http://localhost:8000/posts/${post.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        },
+        body: JSON.stringify(post)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to update post");
+        }
+        return response.json();
+    });
 }

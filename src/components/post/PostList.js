@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import { getPosts } from "../../managers/PostManager.js"
 import { useNavigate } from "react-router-dom";
 import { deletePost } from "../../managers/PostManager.js";
+import { getCurrentUser } from "../../managers/CoderManager.js";
 
 export const PostList = (props) => {
     const [posts, setPosts] = useState([]);
+    const [currentUserId, setCurrentUserId] = useState(null);
     const navigate = useNavigate();
 
     useEffect(() => {
         getPosts().then(data => setPosts(data));
+
+        getCurrentUser().then(user => setCurrentUserId(user.id))
     }, [])
 
     const handleDeletePost = (postId) => {
@@ -30,8 +34,14 @@ export const PostList = (props) => {
                         <div className="post__description">Description: {post.description}</div>
                         <div className="post__date">Date: {post.date}</div>
 
-                        <button onClick={() => handleDeletePost(post.id)}>Delete Post</button>
-                    </section>
+                        {post.poster.id === currentUserId && (
+                            <>
+                            <button onClick={() => navigate(`/post/update/${post.id}`)}>Update Post</button>
+                            <button onClick={() => handleDeletePost(post.id)}>Delete Post</button>
+                        
+                        </>
+                        )}
+                        </section>
                 })
             }
         </article>

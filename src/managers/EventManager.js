@@ -7,6 +7,15 @@ export const getEvents = () => {
     .then(response => response.json())
 }
 
+export const getEventById = (eventId) => {
+    return fetch(`http://localhost:8000/events/${eventId}`, {
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        }
+    })
+        .then(response => response.json())
+}
+
 export const createEvent = (event) => {
     return fetch("http://localhost:8000/events", {
         method: "POST",
@@ -37,4 +46,20 @@ export const deleteEvent = (eventId) => {
         }
         })
         .catch(error => console.error("Network error:", error));
+}
+export const updateEvent = (event) => {
+    return fetch(`http://localhost:8000/events/${event.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        },
+        body: JSON.stringify(event)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to update event");
+        }
+        return response.json();
+    });
 }
