@@ -7,6 +7,8 @@ import { EventList } from "../components/event/EventList.js"
 import { PostForm } from "../components/post/PostForm.js"
 import { EventForm } from "../components/event/EventForm.js"
 import { SingleProfile } from "../components/profile/CoderProfile.js"
+import { PostUpdateForm } from "../components/post/PostUpdate.js"
+import { EventUpdateForm } from "../components/event/EventUpdate.js"
 
 export const ApplicationViews = () => {
     return <>
@@ -14,7 +16,9 @@ export const ApplicationViews = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/posts" element={<PostList/>} />
+            <Route path="/post/update/:postId" element={<PostUpdateForm/>} />
             <Route path="/events" element={<EventList/>} />
+            <Route path="/event/update/:eventId" element={<EventUpdateForm/>} />
             <Route path="/post_form" element={<PostForm/>} />
             <Route path="/event_form" element={<EventForm/>} />
             <Route path="/profile/:userId" element={<SingleProfile/>} />
