@@ -30,7 +30,7 @@ export const PostList = (props) => {
             {
                 posts.map(post => {
                     return <section key={`post--${post.id}`} className="post">
-                        <div className="post__title">{post.title} by {post.poster.user.first_name}</div>
+                        <div className="post__title">{post.title} by {post.poster.user.username}</div>
                         <div className="post__description">Description: {post.description}</div>
                         <div className="post__date">Date: {post.date}</div>
 
