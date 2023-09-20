@@ -16,3 +16,19 @@ export const getUserById = (userId) => {
             .then(response => response.json())
     
 }
+export const updateUser = (user) => {
+    return fetch(`http://localhost:8000/coders/${user.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        },
+        body: JSON.stringify(user)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to update profile");
+        }
+        return response.json();
+    });
+}

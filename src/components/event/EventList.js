@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { getEvents, deleteEvent } from "../../managers/EventManager.js";
 import { getCurrentUser } from "../../managers/CoderManager.js";
 import { addAttendee, removeAttendee } from "../../managers/AttendeeManager.js";
+import './Events.css';
+
+
 
 export const EventList = (props) => {
     const [events, setEvents ] = useState([])
@@ -18,13 +21,18 @@ export const EventList = (props) => {
     }, []);
 
     const handleDeleteEvent = (eventId) => {
-        deleteEvent(eventId)
-        .then(() => getEvents())
-        .then(setEvents)
-        .catch(error => {
-            console.error("Error deleting event: ", error);
-            alert("There was an error deleting the event. Please try again.");
-        })
+        
+        const isConfirmed = window.confirm("Are you sure you want to delete this event?");
+    
+        if (isConfirmed) {
+            deleteEvent(eventId)
+                .then(() => getEvents())
+                .then(setEvents)
+                .catch(error => {
+                    console.error("Error deleting event: ", error);
+                    alert("There was an error deleting the event. Please try again.");
+                })
+        }
     }
     const handleAttendEvent = (eventId) => {
         addAttendee(eventId)
@@ -84,12 +92,13 @@ export const EventList = (props) => {
                                 {event.attendees.map(coder => coder.user.username).join(' , ')}
                             </div>
                         )}
-                        <button 
+                        {event.organizer.id !== currentUserId && !isAttending && (
+                    <button 
                         onClick={() => handleAttendEvent(event.id)}
-                        disabled={event.organizer.id === currentUserId || isAttending}
-                    >
-                        Attend Event
+                        >
+                    Attend Event
                     </button>
+                        )}
 
                     {isAttending && (
                         <button 

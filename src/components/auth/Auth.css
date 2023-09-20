@@ -46,10 +46,17 @@ fieldset {
     text-align: center;
 }
 
+.login-logo {
+    width: 300px;  /* Or another appropriate width */
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .form--login {
     background-size: cover;
     background-position-x: center;
-    background-image: url('https://w7.pngwing.com/pngs/802/825/png-transparent-redbubble-polite-cat-meme-funny-cat-meme-thumbnail.png');
     z-index: 1;
     min-height: 25rem;
     min-width: 45rem;

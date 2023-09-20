@@ -3,6 +3,7 @@ import { getPosts } from "../../managers/PostManager.js"
 import { useNavigate } from "react-router-dom";
 import { deletePost } from "../../managers/PostManager.js";
 import { getCurrentUser } from "../../managers/CoderManager.js";
+import './Post.css';
 
 export const PostList = (props) => {
     const [posts, setPosts] = useState([]);
@@ -16,14 +17,20 @@ export const PostList = (props) => {
     }, [])
 
     const handleDeletePost = (postId) => {
-        deletePost(postId)
-        .then(() => getPosts())
-        .then(setPosts)
-        .catch(error => {
-            console.error("Error deleting post: ", error);
-            alert("There was an error deleting the post. Please try again.");
-        })
+        const isConfirmed = window.confirm("Are you sure you want to delete this post?");
+    
+       
+        if (isConfirmed) {
+            deletePost(postId)
+                .then(() => getPosts())
+                .then(setPosts)
+                .catch(error => {
+                    console.error("Error deleting post: ", error);
+                    alert("There was an error deleting the post. Please try again.");
+                })
+        }
     }
+    
 
     return (
         <article className="posts">

@@ -1,0 +1,9 @@
+/* This will add spacing between each event */
+.event {
+    margin-bottom: 20px; /* or any other value you prefer */
+}
+
+/* If you also want some space around the entire list of events */
+.events {
+    padding: 10px;
+}
