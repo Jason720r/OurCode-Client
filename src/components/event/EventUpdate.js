@@ -137,7 +137,7 @@ export const EventUpdateForm = () => {
                     updateEvent(eventToUpdate)
                         .then(() => navigate(`/events`)); // Assuming you navigate to /events after updating an event
                 }}
-                className="btn btn-primary"
+                className="customButton"
                 >
                     Update Event
                 </button>

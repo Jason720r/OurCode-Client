@@ -72,6 +72,8 @@ export const EventList = (props) => {
     };
     
     return (
+        <div className="events-wrapper">
+        <div className="center-container">
         <article className="events">
             {
                 events.map(event => {
@@ -86,7 +88,7 @@ export const EventList = (props) => {
                         <button onClick={() => toggleAttendees(event.id)}>
                             View Attendees
                         </button>
-
+                        {' '}
                         {expandedEventId === event.id && (
                             <div className="event__attendees">
                                 {event.attendees.map(coder => coder.user.username).join(' , ')}
@@ -108,10 +110,11 @@ export const EventList = (props) => {
                             Un-attend Event
                         </button>
                     )}
-
+                        {' '}
                     {event.organizer.id === currentUserId && (
                         <>
                         <button onClick={() => navigate(`/event/update/${event.id}`)}>Update Event</button>
+                        {' '}
                         <button onClick={() => handleDeleteEvent(event.id)}>Delete Event</button>
                         </>
                     )}
@@ -120,5 +123,7 @@ export const EventList = (props) => {
                 })
             }
         </article>
+        </div>
+        </div>
     )
 }

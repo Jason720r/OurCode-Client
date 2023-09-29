@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getProjectsByUserId } from "../../managers/ProjectManager.js";
 import { updateUser } from "../../managers/CoderManager.js";
 import { createProject } from "../../managers/ProjectManager.js";
+import './Profile.css';
 
 export const SingleProfile = (props) => {
     const [profile, setProfile] = useState([]);
@@ -104,6 +105,7 @@ export const SingleProfile = (props) => {
                 ) : (
                     <div className="profile__first_name">
                         Name:{profile.user?.first_name}
+                        {' '}
                         <button onClick={() => setIsEditing(true)}>Edit Name</button>
                     </div>
                 )}

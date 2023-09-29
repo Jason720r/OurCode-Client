@@ -10,14 +10,25 @@ fieldset {
 }
 
 .form--login {
-    display: inline-block;
+    display: block;
     margin: 0 auto;
     text-align: left;
+    justify-content: center;
+    background-size: cover;
+    background-position-x: center;
+    z-index: 1;
+    min-height: 25rem;
+    min-width: 45rem;
+    padding: 0 5rem;
+    background-color: hsla(0,0%,100%,0.75);
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
 }
 
 .form--login > fieldset > input[type="email"],
 .form--login > fieldset > input[type="password"] {
-    width: 25em;
+    width: 50%;
+    max-width: 500px;
 }
 
 .label--login {
@@ -43,7 +54,18 @@ fieldset {
 }
 
 .container--login {
-    text-align: center;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+.GoogleLogin {
+    z-index: 10; /* or any value higher than your background's z-index */
+}
+#myLoginForm {
+    background-color: #ffffff;
 }
 
 .login-logo {
@@ -54,17 +76,7 @@ fieldset {
     margin-right: auto;
 }
 
-.form--login {
-    background-size: cover;
-    background-position-x: center;
-    z-index: 1;
-    min-height: 25rem;
-    min-width: 45rem;
-    padding: 0 5rem;
-    background-color: hsla(0,0%,100%,0.75);
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-}
+
 
 .button--close {
     position: relative;
@@ -74,4 +86,9 @@ fieldset {
 .dialog {
     min-width: 15rem;
     min-height: 5rem;
+}
+
+.btn-dark.purple {
+    background-color: #2e0949;
+    border-color: #2e0949;  /* Assuming you have a border and want it the same color */
 }

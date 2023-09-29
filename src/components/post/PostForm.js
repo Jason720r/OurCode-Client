@@ -31,11 +31,6 @@ export const PostForm = () => {
     }
     return (
         <form className="postForm">
-            {/* <button className="btn btn-2 btn-sep icon-create"
-    onClick={() => {
-        navigate({ pathname: "/posts/new "})
-    }}
->Create Post</button> */}
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="title">Title: </label>
@@ -74,7 +69,7 @@ export const PostForm = () => {
                         createPost(post)
                             .then(() => navigate("/posts"))
                     }}
-                    className="btn btn-2 btn-sep icon-create">Create</button>
+                    className="customButton">Upload</button>
             </fieldset>
         </form>
     )
