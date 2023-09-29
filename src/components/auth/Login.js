@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { loginUser } from "../../managers/AuthManager"
 import logo from './NexaDev.png';
 import ButtonComponent from "../ButtonComponent.js";
+import { GoogleLogin } from 'react-google-login';
 import '../../index.css';
 
 import "./Auth.css"
@@ -31,6 +32,39 @@ export const Login = () => {
                 }
             })
     }
+    const responseGoogle = async (response) => {
+        if (!response.tokenId) {
+            console.error("Google response:", response);
+            return;
+        }
+    
+        const token = response.tokenId;  // Google's token
+    
+        const res = await fetch("http://localhost:8000/google-login/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({token: token}),
+        });
+    
+        if (!res.ok) {
+            console.error("Error from backend while trying to authenticate with Google", await res.text());
+            return;
+        }
+    
+        const data = await res.json();
+        if (data && data.token) {
+            // Use data.token (your Django token) for further authenticated requests
+            localStorage.setItem("your_django_token_key", data.token);
+        } else {
+            console.error("Error logging in with Google");
+        }
+    }
+    
+    
+    
+    
 
     return (
         <><div class="background">
@@ -60,29 +94,44 @@ export const Login = () => {
                     <button className="button--close" onClick={e => invalidDialog.current.close()}>Close</button>
                 </dialog>
                 <section>
-                    <form className="form--login" onSubmit={handleLogin}>
+                    <form id="myLoginForm" className="form--login" onSubmit={handleLogin}>
                         <img src={logo} alt="NexaDev" className="login-logo" />
-
-
+                        <fieldset style={{ textAlign: "center", marginTop: "10px" }}>
+                        
+                        <GoogleLogin
+                        clientId="807043030534-ssqlb6rge701v7aisge3n2uj8lqs42k3.apps.googleusercontent.com" // You'll get this from Google Developer Console
+                        buttonText="Sign in with Google"
+                        onSuccess={responseGoogle}
+                        onFailure={responseGoogle}
+                        cookiePolicy={'single_host_origin'}
+                    />
+                        <div className="d-flex align-items-center my-3">
+                    <hr className="flex-grow-1 border-dark"/>
+                    <div className="px-3 text-center font-weight-bold text-uppercase h5">Or</div>
+                    <hr className="flex-grow-1 border-dark"/>
+                    </div>
 
 
                         <fieldset>
-                            <label htmlFor="inputUsername"> Username </label>
+                            <label htmlFor="inputUsername">  </label>
                             <input ref={username} type="username" id="username" className="form-control" placeholder="Username" required autoFocus />
                         </fieldset>
                         <fieldset>
-                            <label htmlFor="inputPassword"> Password </label>
+                            <label htmlFor="inputPassword">  </label>
                             <input ref={password} type="password" id="password" className="form-control" placeholder="Password" required />
                         </fieldset>
                         <fieldset style={{
                             textAlign: "center"
                         }}>
-                            <ButtonComponent label="Sign In" variant="primary" type="submit" />
+                            <ButtonComponent label="Sign In" className="btn-dark purple" type="submit" />
                         </fieldset>
-                    </form>
-                </section>
+
+                    
                 <section className="link--register">
-                    <Link to="/register">Not a member yet?</Link>
+                    <div>Don't have an account? <Link className="btn-purple-text" to="/register">Sign Up</Link></div>
+                </section>
+                </fieldset>
+                    </form>
                 </section>
             </main></>
     )

@@ -76,7 +76,7 @@ export const PostUpdateForm = () => {
                         updatePost(postToUpdate)
                             .then(() => navigate(`/posts`));
                     }}
-                    className="btn btn-primary"
+                    className="customButton"
                     >
                         Update Post
                     </button>

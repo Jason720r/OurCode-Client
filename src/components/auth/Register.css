@@ -1,0 +1,53 @@
+.form--register {
+    background-color: #f3f2f8;  /* light purple background */
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.form-control {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border: 1px solid #d1c4e9; /* light purple border */
+    border-radius: 5px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: #673ab7; /* darker purple on focus */
+    box-shadow: 0 0 5px rgba(103, 58, 183, 0.5); /* soft purple glow */
+}
+
+.btn-1 {
+    background-color: #673ab7;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-1:hover {
+    background-color: #5e35b1;
+}
+
+.link--register {
+    margin-top: 20px;
+}
+
+h1.h3.mb-3.font-weight-normal {
+    margin-bottom: 20px;
+    color: #673ab7; /* give title a purple shade */
+}
+
+.dialog {
+    margin: 15px auto;
+    max-width: 500px; /* ensure dialog fits with form width */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
