@@ -8,8 +8,8 @@
 }
 
 .events {
-    margin: 40px 0; /* Removed left-right margin to use auto centering */
-    width: 120%; /* For example, 80% of the .events-wrapper width or set a fixed value like 800px */
+    margin: 40px auto; /* Removed left-right margin to use auto centering */
+    width: 65%; /* For example, 80% of the .events-wrapper width or set a fixed value like 800px */
     display: flex;
     flex-direction: column;
     gap: 30px;

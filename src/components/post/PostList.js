@@ -12,8 +12,11 @@ export const PostList = (props) => {
     const [allComments, setAllComments] = useState({});
     const [expandedPosts, setExpandedPosts] = useState([]);
     const [commentInput, setCommentInput] = useState({});
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     const navigate = useNavigate();
     useEffect(() => {
@@ -115,27 +118,46 @@ export const PostList = (props) => {
     
                     return (
                         <section key={`post--${post.id}`} className="post">
+                            {post.poster.id === currentUserId && (
+                        <div className="post-options">
+                        <button onClick={toggleMenu} className="post-options__btn">•••</button>
+                    {isMenuOpen && (
+                        <div className="post-options__menu">
+                <button onClick={() => navigate(`/post/update/${post.id}`)}>Update Post</button>
+                <button onClick={() => handleDeletePost(post.id)}>Delete Post</button>
+            </div>
+        )}
+    </div>
+)}
                             <div className="post__title">{post.title} by {post.poster.user.username}</div>
                             <div className="post__description">Description: {post.description}</div>
-                            <div className="post__date">Date: {post.date}</div>
-    
+                            <div className="post__date">Posted on:{post.date}</div>
+                        <hr className="post__divider" />
                             {/* Render the comments */}
                             <div className="post__comments">
                                 {commentsToDisplay.map(comment => (
                                     <>
                                         <div key={`comment--${comment.id}`} className="comment">
                                             <div className="comment__author">{comment.author.user.username}</div>
+                                            <div className="comment__content"> 
                                             <div className="comment__text">{comment.text}</div>
-                                        </div>
-                                        {comment.author.id === currentUserId && (
-                                            <button onClick={() => handleDeleteComment(comment.id, post.id)}>
-                                                Delete Comment
+                                            {comment.author.id === currentUserId && (
+                                            <button onClick={() => handleDeleteComment(comment.id, post.id)} className="trash-button">
+                                               <img src="https://banner2.cleanpng.com/20190826/tpo/transparent-bin-icon-trash-bin-icon-5d6554968e4b65.5330339515669218785828.jpg" alt="Delete Comment" className="trash-icon"/>
                                             </button>
                                         )}
+                                        </div>
+                                        </div>
                                     </>
                                 ))}
     
                                 {/* Input field for adding a comment (moved outside of the comments map) */}
+                                 {/* Render a button to show more/less comments if there are more than 2 comments */}
+                                 {commentsForPost.length > 2 && (
+                                    <button className="post_button" onClick={() => toggleExpanded(post.id)}>
+                                        {expandedPosts.includes(post.id) ? "Show Less" : "Show More"}
+                                    </button>
+                                )}
                                 <div className="post__add_comment">
                                     <input 
                                         type="text"
@@ -143,24 +165,11 @@ export const PostList = (props) => {
                                         onChange={(text) => setCommentInput(prev => ({ ...prev, [post.id]: text.target.value }))}
                                         placeholder="Add a comment"
                                     />
-                                    <button onClick={() => handleAddComment(post.id)}>Add Comment</button>
+                                    <button className="post-comment-button" onClick={() => handleAddComment(post.id)}>Post</button>
                                 </div>
                                 
-                                {/* Render a button to show more/less comments if there are more than 2 comments */}
-                                {commentsForPost.length > 2 && (
-                                    <button className="post_button" onClick={() => toggleExpanded(post.id)}>
-                                        {expandedPosts.includes(post.id) ? "Show Less" : "Show More"}
-                                    </button>
-                                )}
                             </div>
     
-                            {post.poster.id === currentUserId && (
-                                <>
-                                    <button onClick={() => navigate(`/post/update/${post.id}`)}>Update Post</button>
-                                    {' '}
-                                    <button onClick={() => handleDeletePost(post.id)}>Delete Post</button>
-                                </>
-                            )}
                         </section>
                     );
                 })
