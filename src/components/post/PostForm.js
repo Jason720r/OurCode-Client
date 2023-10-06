@@ -69,7 +69,7 @@ export const PostForm = () => {
                         createPost(post)
                             .then(() => navigate("/posts"))
                     }}
-                    className="customButton">Upload</button>
+                    className="customButton">Post</button>
             </fieldset>
         </form>
     )

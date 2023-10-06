@@ -175,10 +175,17 @@
     }
 }
 
+.post__author {
+    font-size: 0.9em; /* Adjust the font size as desired */
+    color: #666;     /* Adjust the color as desired */
+    margin: 5px 0;   /* Adjust margin as desired */
+}
+
+
 .post__divider {
-    border: 0;                       /* Remove default border */
-    border-top: 1px solid #e0e0e0;   /* Add a top border */
-    margin: 15px 0;                 /* Adjust spacing around the divider */
+    border: 2;                       /* Remove default border */
+    border-top: 1px solid #2e0949;   /* Add a top border */
+    margin: 10px 0;                 /* Adjust spacing around the divider */
 }
 
 button {
@@ -210,4 +217,13 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.post__description {
+    border: 1px solid #2e0949; 
+    background-color: rgb(255, 252, 252);
+    padding: 10px;  
+    margin: 20px 0 10px 0;
+    border-radius: 4px; 
+   color: #333;
 }

@@ -109,7 +109,7 @@ export const EventForm = () => {
                         createEvent(event)
                             .then(() => navigate("/events"))
                     }}
-                    className="customButton">Create Event</button>
+                    className="customButton">Post</button>
              </fieldset>
         </form>
     )
