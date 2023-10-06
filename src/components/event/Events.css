@@ -17,21 +17,49 @@
 }
 
 .event {
-    background-color: #e3e0e6;
-    border-radius: 5px;
-    padding: 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f7f5fa;
+    border-radius: 8px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 	text-align: center;
+    position: relative;
 }
 
 .event__name {
     font-size: 1.5em;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #2e0949;
+    border: 2px solid #2e0949; /* Added border width and style */
+    padding: 5px; /* Added padding to give some space between the text and the border */
+    display: block;
 }
 
-.event__type, .event__number_of_people, .event__description, .event__location, .event__date {
+.event__author {
+    background-color: #f7f5fa;
+    color: #2e0949;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.event__type, .event__location, .event__date {
+   padding: 10px 15px;
+   border-radius: 4px;
+}
+
+.event__number_of_people{
+    padding: 10px 15px;
+   border-radius: 4px;
+}
+
+.event__description {
     margin: 10px 0;
+    background-color: #e3e0e6; 
+    padding: 10px 15px; 
+    border-radius: 4px;
 }
 
 button {
@@ -61,4 +89,11 @@ button:hover {
     padding: 20px;
     border-radius: 4px; /* Optionally add a slight rounded corner for the form */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.event__details {
+    font-size: 1.2em; /* Adjust the font size as needed */
+    font-weight: bold; /* Makes the text bold */
+    color: #2e0949; /* Using the purple theme color */
+    margin-bottom: 10px; /* Adds some space below the header */
 }

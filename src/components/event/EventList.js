@@ -79,10 +79,11 @@ export const EventList = (props) => {
                 events.map(event => {
                     const isAttending = event.attendees.some(attendee => attendee.id === currentUserId)
                     return <section key={`event--${event.id}`} className="event">
-                        <div className="event__name">{event.name} by {event.organizer.user.username}</div>
-                        <div className="event__type">Type:{event.type.label}</div>
+                        <div className="event__name">{event.name}</div>
+                        <div className="event__author"> Hosted by {event.organizer.user.username} Type:{event.type.label}</div>
+                        <div className="event__details">Details</div>
+                        <div className="event__description">{event.description}</div>
                         <div className="event__number_of_people">People Limit:{event.number_of_people}</div>
-                        <div className="event__description">Description:{event.description}</div>
                         <div className="event__location">Address: {event.location}</div>
                         <div className="event__date">Taking place on: {event.date}</div>
                         <button onClick={() => toggleAttendees(event.id)}>
