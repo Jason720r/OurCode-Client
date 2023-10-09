@@ -6,6 +6,8 @@ export const NewsComponent = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+  
+
     useEffect(() => {
         fetch("http://localhost:8000/latest-news/")
             .then(response => {
@@ -33,14 +35,16 @@ export const NewsComponent = () => {
         <div className="news-section">
             {news.map((article, index) => (
                 <div key={index} className="news-card">
-                    <h2 className="article_title">{article.title}</h2>
-                    <div className="article_image">{article.image_url && <img src={article.image_url} alt={article.title} />}</div>
+                    <div className="news-content">
+                        <h2 className="article_title">{article.title}</h2>
+                        {article.image_url && <img className="article-image" src={article.image_url} alt={article.title} />}
+                        <a href={article.link} className="news_link_button" target="_blank" rel="no_opener no_referrer">Read More</a>
+                    </div>
                     {/* Display other fields as needed */}
                 </div>
             ))}
         </div>
     );
-    
-}
+            }    
 
 
