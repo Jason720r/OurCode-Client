@@ -9,7 +9,7 @@
 
 .events {
     margin: 40px auto; /* Removed left-right margin to use auto centering */
-    width: 65%; /* For example, 80% of the .events-wrapper width or set a fixed value like 800px */
+    width: 120%; /* For example, 80% of the .events-wrapper width or set a fixed value like 800px */
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -19,7 +19,7 @@
 .event {
     background-color: #f7f5fa;
     border-radius: 8px;
-    padding: 20px 30px;
+    padding: 100px 100px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 	text-align: center;
     position: relative;
