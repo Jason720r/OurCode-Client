@@ -1,0 +1,13 @@
+.parent-container {
+    display: flex;
+    justify-content: center;
+}
+
+.news-left, .news-right {
+    flex: 1;   /* this means they will take up equal space on the sides */
+    max-width: 200px;  /* or however wide you want the news sections to be */
+}
+
+.article_title {
+    font-size: 1em;
+}

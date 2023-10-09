@@ -2,12 +2,14 @@
 .post {
     position: relative;
     margin-bottom: 20px; /* or any other value you prefer */
-    padding: 10px;
+    padding: 40px;
+    width: 150%;
+    right: 33%;
 }
 
 /* If you also want some space around the entire list of events */
 .posts {
-    padding: 10px;
+    padding: 1px;
 }
 .postForm {
     width: 50%;

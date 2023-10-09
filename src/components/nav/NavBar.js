@@ -7,7 +7,7 @@ export const NavBar = () => {
         
         <ul className="navbar">
             <li className="navbar__item">
-            <Link className="nav-link" to="/posts">
+            <Link className="nav-link" to="/latest-news/">
             <i className="fas fa-home"></i>
             <span></span>
         </Link> 
@@ -32,7 +32,7 @@ export const NavBar = () => {
                 
             </li>
             <li className="navbar__item">
-                <Link className="nav-link" to="/profile/userId"><i className="fas fa-user"></i>
+                <Link className="nav-link" to="/profile/:userId"><i className="fas fa-user"></i>
                 <span></span>
                 </Link>
                 
