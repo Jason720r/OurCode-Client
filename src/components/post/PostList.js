@@ -130,8 +130,8 @@ export const PostList = (props) => {
     </div>
 )}
                             <div className="post__title">{post.title}</div>
-                            <div className="post__author"> by {post.poster.user.username}</div>
                             <div className="post__description"> {post.description}</div>
+                            <div className="post__author"> by {post.poster.user.username}</div>
                             <div className="post__date">Posted on:{post.date}</div>
                         <hr className="post__divider" />
                             {/* Render the comments */}
