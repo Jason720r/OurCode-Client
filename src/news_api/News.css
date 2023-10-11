@@ -2,56 +2,171 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    align-items: flex-start;
 }
 
+.events-section{
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #fff;  /* Giving it a white background */
+    box-shadow:0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: Adds a subtle shadow to the box */
+    border-radius: 5px;  /* Optional: Rounds the corners of the box */
+}
+
+
+
 .popular_title {
-    font-weight: bold;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2e0949;
+    padding:5px -20px; /* Added padding to give some space between the text and the border */
+    display: block;
+}
+
+.popular_event__location {
+    background-color: #ffffff;
+    color: #2e0949;
+    padding: 10px -20px;
+    border-radius: 4px;
+    font-weight: 500;
     margin-bottom: 10px;
 }
 
- .news-right {
-    flex: 1;   /* this means they will take up equal space on the sides */
-    max-width: 200px;  /* or however wide you want the news sections to be */
-}
-.popular_events {
-    flex: 1;   /* this means they will take up equal space on the sides */
-    max-width: 100px;
+.news_header {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2e0949;
+    padding:5px -20px; /* Added padding to give some space between the text and the border */
+    display: block;
 }
 
+ .news-right {
+    flex: 1;   
+    max-width: 200px;  
+}
+.popular_events {
+    flex: 1;  
+    max-width: 1px;
+}
+
+
+
+.popular_event {
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin: 20px 0;
+    padding: 15px 10px;
+    box-shadow: 0 2px 5px rgba(31, 6, 38, 0.5);
+	text-align: center;
+    position: relative;
+   
+}
+.popular_event__date{
+    background-color: #ffffff;
+    color: #2e0949;
+    padding: 10px -20px;
+    border-radius: 4px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.popular_event__name {
+    font-size: 0.9em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2e0949;
+    border: 1px solid #2e0949; /* Added border width and style */
+    padding:5px -20px; /* Added padding to give some space between the text and the border */
+    display: block;
+}
+
+.popular_event__author {
+    background-color: #ffffff;
+    color: #2e0949;
+    padding: 5px -20px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.popular_event_type {
+    padding: 1px -20px;
+    display: inline-block;
+    margin-left: 10px;
+}
 
 .article_title {
     font-size: 1em;
     margin-right: 10px;
+    flex: none;
 }
 
 .article-image {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+    width: 80px;
+    height: 90px;
+    object-fit: contain;
+    margin-right: 20px;
+    
 }
 
-.news-content {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
 
-.news-link-button {
+
+.news_link_button {
     display: none;  /* Hide the button by default */
-    position: absolute;  /* Position the button absolutely */
+    position: absolute;  
     top: 50%;  /* Center it vertically */
-    left: 100%;  /* Position it to the right of the content */
     transform: translateY(-50%);  /* Center it vertically with transform */
-    margin-left: 10px;  /* Some spacing from the content */
+    margin: 10px auto;
     padding: 5px 10px;  /* Padding for the button */
-    background-color: #333;
-    color: #fff;
+    background-color: #2e0949;
+    color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     text-decoration: none;
 }
 
-.article_title:hover + .article-image + .news-link-button {
-    display: block;  /* Show the button when title is hovered */
+.news-section {
+    border: 1px solid #ccc;  /* This will contain all the news articles inside a border */
+    padding: 10px;  /* Add some space inside the container */
+    background-color: #fff;  /* Giving it a white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: Adds a subtle shadow to the box */
+    border-radius: 5px;  /* Optional: Rounds the corners of the box */
+    width: 100%;  /* Ensures the news section takes the full width of its parent */
+    box-sizing: border-box;  /* Ensures padding and border are included in width calculations */
+    max-height: 1000px;
+    overflow-y: auto;
 }
+
+.news-card {
+    padding: 10px 0;  /* Add vertical padding to each article */
+    border-bottom: 1px solid #eee;  /* Separates each article with a horizontal line */
+}
+
+.news-card:last-child {
+    border-bottom: none;  /* Remove border from the last article to avoid double borders */
+}
+
+.news-content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.article-details {
+    display: flex;
+    flex-direction: column;  /* Stacks title and image on top of each other */
+    align-items: flex-start;  /* Aligns to the left */
+}
+
+.article-details:hover + .news_link_button,
+.news_link_button:hover {
+    display: block;
+}
+
+
+
+

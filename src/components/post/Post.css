@@ -1,16 +1,5 @@
-/* This will add spacing between each event */
-.post {
-    position: relative;
-    margin-bottom: 20px; /* or any other value you prefer */
-    padding: 40px;
-    width: 150%;
-    right: 33%;
-}
 
-/* If you also want some space around the entire list of events */
-.posts {
-    padding: 1px;
-}
+
 .postForm {
     width: 50%;
     margin: 0 auto;
@@ -21,9 +10,9 @@
 }
 
 .post-options {
-    position: absolute; 
+    position: relative; 
     top: 10px;
-    right: 10px;
+    left: 380px;
     display: inline-block; /* Makes the wrapper behave like a single element */
 }
 
@@ -32,7 +21,8 @@
     font-family: inherit;
     font-size: inherit;
     line-height: inherit; 
-    background-color: #2e0949;
+    color: #2e0949;
+    background-color: #ffffff;
     border: none;
     cursor: pointer;
 }
@@ -52,8 +42,8 @@
     font-family: inherit;
     font-size: inherit;
     line-height: inherit; 
-    background-color: #2e0949;
-    color: #fff;
+    background-color: #ffffff;
+    color: #2e0949;
     border: none;
     padding: 10px 15px;
     display: block;
@@ -63,7 +53,7 @@
 }
 
 .post-options__menu button:hover {
-    background-color: #3d1a5b;
+    background-color: #928e94;
 }
 
 /* This styles the div that wraps the label and input */
@@ -126,11 +116,9 @@
     display: block;
     justify-content: space-between;
     align-items: center;
-    padding: 8px;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
+    padding: 3px;
     margin-top: 5px;
-    background-color: #f7f7f7;
+    background-color: #ffffff;
 }
 
 .comment__author {
@@ -146,7 +134,7 @@
     display: block;
     margin: 15px 0;
     padding: 10px 15px;
-    background-color: #3c076a;
+    background-color: #2e0949;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -155,7 +143,7 @@
 }
 
 .post_button:hover {
-    background-color: #888dcd;
+    background-color: #76379a;
 }
 
 .post-comment-button {
@@ -163,18 +151,17 @@
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    background-color: transparent; /* Removing the full color fill */
-    color: #2e0949; /* Setting text color to purple */
+    background-color: #2e0949; /* Removing the full color fill */
+    color: #ffffff; /* Setting text color to purple */
     border: 2px solid #2e0949; /* Adding a purple border */
     padding: 0.05px 5px; /* You can adjust this to make the button smaller or larger */
     cursor: pointer; /* Making it obvious that it's a clickable button */
     transition: background-color 0.3s ease; /* Smooth transition for hover effects */
 
-    /* Hover effect */
-    &:hover {
-        background-color: #2e0949;
-        color: #ffffff;
-    }
+}
+
+.post-comment-button:hover {
+    background-color: #76379a;
 }
 
 .post__author {
@@ -196,6 +183,7 @@ button {
 
 .trash-button {
     background: none;
+    background-color: #FFFFFF;
     border: none;
     cursor: pointer;
     padding: 5px;
@@ -207,7 +195,7 @@ button {
 
 .trash-button:hover {
     opacity: 0.5;  /* Fully opaque on hover */
-    background-color: #2e0949;
+    background-color: #ffffff;
 }
 
 .trash-icon {
@@ -222,10 +210,9 @@ button {
 }
 
 .post__description {
-    border: 1px solid #2e0949; 
-    background-color: rgb(255, 252, 252);
+     
+    background-color: #ffffff;
     padding: 10px;  
     margin: 20px 0 10px 0;
-    border-radius: 4px; 
    color: #333;
 }
