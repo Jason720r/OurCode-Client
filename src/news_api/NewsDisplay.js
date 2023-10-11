@@ -33,12 +33,17 @@ export const NewsComponent = () => {
 
     return (
         <div className="news-section">
+            <div className='news_header'>Daily Tech News</div>
             {news.map((article, index) => (
                 <div key={index} className="news-card">
                     <div className="news-content">
+                        <div className='article-details'>
                         <h2 className="article_title">{article.title}</h2>
                         {article.image_url && <img className="article-image" src={article.image_url} alt={article.title} />}
-                        <a href={article.link} className="news_link_button" target="_blank" rel="no_opener no_referrer">Read More</a>
+                        </div>
+                        <div className="news_link_button">
+                        <a href={article.link}  target="_blank" rel="no_opener no_referrer">Read More</a>
+                        </div>
                     </div>
                     {/* Display other fields as needed */}
                 </div>

@@ -1,0 +1,24 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    /* Add more variables as required */
+ }
+ 
+ /* Dark theme */
+ [data-theme="dark"] {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    /* Adjust other variables for dark mode */
+ }
+ 
+ /* Usage */
+ body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Comfortaa", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+	height: 100%
+ }
