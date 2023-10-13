@@ -134,10 +134,11 @@
     background-color: #fff;  /* Giving it a white background */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: Adds a subtle shadow to the box */
     border-radius: 5px;  /* Optional: Rounds the corners of the box */
-    width: 100%;  /* Ensures the news section takes the full width of its parent */
+    width: 500%;  /* Ensures the news section takes the full width of its parent */
     box-sizing: border-box;  /* Ensures padding and border are included in width calculations */
     max-height: 1000px;
     overflow-y: auto;
+    margin-left: -200px;
 }
 
 .news-card {

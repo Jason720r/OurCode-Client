@@ -71,6 +71,8 @@ export const ParentContainerComponent = () => {
                             </div>
                             <div className="popular_event__location">Address: {event.location}</div>
                             <div className="popular_event__date">Taking place on: {event.date}</div>
+                            <button type="button" className='popular_event_button' onClick={() => navigate("/events")}>View Event</button>
+
                         </section>
                     )
                 })
