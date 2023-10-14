@@ -437,11 +437,11 @@ code {
 }
 
 .posts {
-    width: 70%;
+    width: 88%;
     margin: 0 auto;
     background-color: #ffffff;
     padding: 0px 10px;
-    margin-left: 25px;
+    margin-left: 8px;
 }
 
 .post {
@@ -488,14 +488,6 @@ button:hover {
     background-color: #ddd;
 }
 
-.postForm {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
 .form-group {
     margin-bottom: 20px;

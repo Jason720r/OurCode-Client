@@ -4,6 +4,7 @@ import { PostList } from '../components/post/PostList.js';
 import { EventList } from '../components/event/EventList.js';
 import { getEvents } from '../managers/EventManager.js';
 import { useNavigate } from 'react-router-dom';
+import { PostForm } from '../components/post/PostForm.js';
 import './News.css';
 
 
@@ -79,8 +80,13 @@ export const ParentContainerComponent = () => {
             }
         </div>
     </div>
+<div className="post-section">
+    <div className="news_post_form">
+        <PostForm />
+    </div>
     <div className="posts">
         <PostList />
+    </div>
     </div>
     <div className="news-right">
         <NewsComponent />
