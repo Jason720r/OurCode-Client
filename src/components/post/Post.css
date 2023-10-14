@@ -180,3 +180,16 @@ button {
     margin: 20px 0 10px 0;
    color: #333;
 }
+
+.post__like {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 5px;
+    background-color: #ece9ee;
+    color: #3e0c4b;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 10%;
+}

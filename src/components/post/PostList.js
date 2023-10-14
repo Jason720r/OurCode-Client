@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { deletePost } from "../../managers/PostManager.js";
 import { getCurrentUser } from "../../managers/CoderManager.js";
 import { getComments, createComment, deleteComment } from "../../managers/CommentManager.js";
+import { addLike, removeLike } from "../../managers/LikeManager.js";
 import './Post.css';
 
 export const PostList = (props) => {
@@ -105,6 +106,17 @@ export const PostList = (props) => {
                 });
         }
     }
+
+    const handleLikePost = (postId) => {
+        addLike(postId)
+        .then(() => {
+            return getPosts();
+        })
+        .then(setPosts)
+        .catch(error => {
+            console.error("Failed to like post: ", error);
+        })
+    };
     
     return (
         <article className="posts">
@@ -125,14 +137,25 @@ export const PostList = (props) => {
                         <div className="post-options__menu">
                 <button onClick={() => navigate(`/post/update/${post.id}`)}>Update Post</button>
                 <button onClick={() => handleDeletePost(post.id)}>Delete Post</button>
-            </div>
-        )}
-    </div>
-)}
-                            <div className="post__title">{post.title}</div>
-                            <div className="post__description"> {post.description}</div>
-                            <div className="post__author"> by {post.poster.user.username}</div>
-                            <div className="post__date">Posted on:{post.date}</div>
+                 </div>
+                    )}
+                    </div>
+                            )}
+                    <div className="post__title">{post.title}</div>
+                     <div className="post__description"> {post.description}</div>
+                    <div className="post__author"> by {post.poster.user.username}</div>
+                    <div className="post__date">Posted on:{post.date}</div>
+                    <div className="post__like">
+                    {post.likers.includes(currentUserId) && (
+                        <button
+                        onClick={() => handleLikePost(post.id)}
+                    className={post.likers.includes(currentUserId) ? "liked" : "not-liked"}
+                        >
+                    {post.likers.includes(currentUserId) ? "Unlike Post" : "Like Post"}
+                        </button>
+                    )}
+                    </div>
+                    
                         <hr className="post__divider" />
                             {/* Render the comments */}
                             <div className="post__comments">
