@@ -1,13 +1,5 @@
 
 
-.postForm {
-    width: 50%;
-    margin: 0 auto;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 4px; /* Optionally add a slight rounded corner for the form */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
 
 .post-options {
     position: relative; 
@@ -55,35 +47,6 @@
 
 .post-options__menu button:hover {
     background-color: #928e94;
-}
-
-/* This styles the div that wraps the label and input */
-.form-group {
-    background-color: #e3e0e6;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 4px;
-}
-
-/* Style the labels similar to the post titles */
-.form-group label {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-    display: block; /* This ensures the label takes the full width and pushes the input below */
-}
-
-/* Style the input fields similar to post descriptions */
-.form-group input.form-control {
-    color: #666;
-    margin-bottom: 10px;
-    width: 100%; /* To ensure the input takes the full width of its parent */
-    padding: 10px;
-    border: none;
-    background-color: #f7f7f7;
-    border-radius: 4px;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* To match the post date style, but for the form it will style the date input */
