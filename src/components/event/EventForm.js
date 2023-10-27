@@ -39,6 +39,7 @@ export const EventForm = () => {
     }
     return (
         <form className="eventForm">
+            <div className="header">Create an Event</div>
             {/* <button className="btn btn-2 btn-sep icon-create"
     onClick={() => {
         navigate({ pathname: "/events/new"})
