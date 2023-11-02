@@ -67,7 +67,7 @@ export const PostForm = () => {
                         }
 
                         createPost(post)
-                            .then(() => navigate("/posts"))
+                            .then(() => window.alert("Post submitted"))
                     }}
                     className="customButton">Post</button>
             </fieldset>
