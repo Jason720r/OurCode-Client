@@ -13,7 +13,7 @@ export const NavBar = () => {
         </Link> 
             </li>
             <li className="navbar__item">
-            <Link className="nav-link" to="/post_form">
+            <Link className="nav-link" to="/projects">
             <i className="fas fa-edit"></i>
             <span></span>
         </Link>

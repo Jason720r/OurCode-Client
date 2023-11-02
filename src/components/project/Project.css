@@ -1,0 +1,68 @@
+
+.projects-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* To align at the top */
+    width: 100%;
+    padding: 0 30px; /* Optional padding for responsiveness */
+}
+
+.projects {
+    margin: 40px auto; /* Removed left-right margin to use auto centering */
+    width: 80%; /* For example, 80% of the .projects-wrapper width or set a fixed value like 800px */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+}
+
+.project {
+    background-color: #f7f5fa;
+    border-radius: 8px;
+    padding: 100px 100px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+	text-align: center;
+    position: relative;
+}
+
+.project__title {
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #2e0949;
+    border: 2px solid #2e0949; 
+    padding: 5px; 
+    display: block;
+}
+
+.project__creator {
+    background-color: #f7f5fa;
+    color: #2e0949;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.project__description, .project__url {
+   padding: 10px 15px;
+   border-radius: 4px;
+   margin-bottom: 15px; /* To separate each property */
+}
+
+.projectForm {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.project__details {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2e0949;
+    margin-bottom: 10px;
+}
