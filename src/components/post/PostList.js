@@ -146,14 +146,14 @@ export const PostList = (props) => {
                     <div className="post__author"> by {post.poster.user.username}</div>
                     <div className="post__date">Posted on:{post.date}</div>
                     <div className="post__like">
-                    {post.likers.includes(currentUserId) && (
+                    {/* {post.likers.includes(currentUserId) && (
                         <button
                         onClick={() => handleLikePost(post.id)}
                     className={post.likers.includes(currentUserId) ? "liked" : "not-liked"}
                         >
                     {post.likers.includes(currentUserId) ? "Unlike Post" : "Like Post"}
                         </button>
-                    )}
+                    )} */}
                     </div>
                     
                         <hr className="post__divider" />
