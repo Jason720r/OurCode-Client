@@ -32,7 +32,7 @@ export const Register = () => {
                 .then(res => {
                     if ("token" in res) {
                         localStorage.setItem("lu_token", res.token)
-                        navigate("/")
+                        navigate("/latest-news")
                     }
                 })
         } else {

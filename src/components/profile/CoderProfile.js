@@ -90,8 +90,10 @@ export const SingleProfile = (props) => {
                 {profile.image && (
                     <img src={profile.image} alt="Profile Picture" className="profile__image" />
                 )}
-                <div className="profile__username">UserName:{profile.user?.username}</div>
-                <div className="profile__email">Email:{profile.user?.email}</div>
+                <div className="user">Username</div>
+                <div className="profile__username">{profile.user?.username}</div>
+                {/* <div>Email</div>
+                <div className="profile__email">{profile.user?.email}</div> */}
                 
                 {isEditing ? (
                     <div>
@@ -103,10 +105,11 @@ export const SingleProfile = (props) => {
                         <button onClick={handleSave}>Save Name</button>
                     </div>
                 ) : (
+                    <div className="name"> Name <button onClick={() => setIsEditing(true)}>Edit Name</button>
                     <div className="profile__first_name">
-                        Name:{profile.user?.first_name}
+                        {profile.user?.first_name}
                         {' '}
-                        <button onClick={() => setIsEditing(true)}>Edit Name</button>
+                    </div>
                     </div>
                 )}
                 
@@ -119,9 +122,10 @@ export const SingleProfile = (props) => {
                         <button onClick={handleSave}>Save Bio</button>
                     </div>
                 ) : (
+                    <div className="bio">Bio<button onClick={() => setIsEditing(true)}>Edit Bio</button>
                     <div className="profile__bio">
-                        Bio:{profile.bio}
-                        <button onClick={() => setIsEditing(true)}>Edit Bio</button>
+                        {profile.bio}
+                    </div>
                     </div>
                 )}
             </section>
@@ -158,7 +162,7 @@ export const SingleProfile = (props) => {
                     <div key={`project--${project.id}`} className="project">
                         <h3>{project.title}</h3>
                         <p>{project.description}</p>
-                        {project.url && <a href={project.url} target="_blank" rel="noopener noreferrer">Project Link</a>}
+                        {project.url && <a href={project.url} target="_blank" rel="noopener noreferrer">{project.url}</a>}
                     </div>
                 ))}
             </section>
