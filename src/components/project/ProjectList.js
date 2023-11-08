@@ -20,6 +20,7 @@ export const ProjectList = (props) =>{
                     projects.map(project => {
                         return <section key={`project--${project.id}`} className="project_example">
                             <div className="project_title">{project.title}</div>
+                            <div className="description_header">Description:</div>
                             <div className="project_description">{project.description}</div>
                             <div className="project_url">{project.url}</div>
                             <div className="project_creator">{project.creator.user}</div>

@@ -24,18 +24,23 @@
 	text-align: center;
     position: relative;
 }
-
-.project__title {
-    font-size: 1.5em;
+.description_header {
+       font-size: 1.2em; /* Adjust the font size as needed */
+    font-weight: bold; /* Makes the text bold */
+    color: #2e0949; /* Using the purple theme color */
+    margin-bottom: 10px;
+}
+.project_title {
+    font-size: 1em;
     font-weight: 600;
     margin-bottom: 15px;
     color: #2e0949;
-    border: 2px solid #2e0949; 
-    padding: 5px; 
+    border: 2px solid #2e0949; /* Added border width and style */
+    padding: 5px; /* Added padding to give some space between the text and the border */
     display: block;
 }
 
-.project__creator {
+.project_creator {
     background-color: #f7f5fa;
     color: #2e0949;
     padding: 5px 10px;
@@ -45,7 +50,7 @@
     margin-bottom: 15px;
 }
 
-.project__description, .project__url {
+.project_description, .project_url {
    padding: 10px 15px;
    border-radius: 4px;
    margin-bottom: 15px; /* To separate each property */
@@ -65,4 +70,13 @@
     font-weight: bold;
     color: #2e0949;
     margin-bottom: 10px;
+}
+
+.project_example {
+    background-color: #f7f5fa;
+    border-radius: 8px;
+    padding: 20px; /* Adjust padding to your preference */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px; /* Space between projects */
+    text-align: center;
 }
