@@ -12,6 +12,7 @@ import { PostUpdateForm } from "../components/post/PostUpdate.js"
 import { EventUpdateForm } from "../components/event/EventUpdate.js"
 import { NewsComponent } from "../news_api/NewsDisplay.js"
 import { ParentContainerComponent } from "../news_api/NewPostContainer.js"
+import { SingleEvent } from "../components/event/SingleEvent.js"
 
 export const ApplicationViews = () => {
     return <>
@@ -22,6 +23,7 @@ export const ApplicationViews = () => {
             <Route path="/post/update/:postId" element={<PostUpdateForm/>} />
             <Route path="/events" element={<EventList/>} />
             <Route path="/event/update/:eventId" element={<EventUpdateForm/>} />
+            <Route path="/single_event/:eventId" element={<SingleEvent/>} />
             <Route path="/post_form" element={<PostForm/>} />
             <Route path="/event_form" element={<EventForm/>} />
             <Route path="/latest-news/" element={<ParentContainerComponent/>} />
