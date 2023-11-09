@@ -10,6 +10,7 @@ export const SingleEvent = () => {
     const [event, setSingleEvent] = useState({
         name: "",
         organizer: 0,
+        type: 0,
         description: "",
         number_of_people: 0,
         location: "",
@@ -20,7 +21,8 @@ export const SingleEvent = () => {
     .then(event => {
         setSingleEvent({
             name: event.name,
-            organizer: event.organizer.user,
+            organizer: event.organizer.user.username,
+            type: event.type.label,
             description: event.description,
             number_of_people: event.number_of_people,
             location: event.location,
