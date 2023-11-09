@@ -3,6 +3,7 @@ import { NewsComponent } from './NewsDisplay.js';
 import { PostList } from '../components/post/PostList.js';
 import { EventList } from '../components/event/EventList.js';
 import { getEvents } from '../managers/EventManager.js';
+import { getEventById } from '../managers/EventManager.js';
 import { useNavigate } from 'react-router-dom';
 import { PostForm } from '../components/post/PostForm.js';
 import './News.css';
@@ -14,6 +15,7 @@ export const ParentContainerComponent = () => {
 
 
     const navigate = useNavigate();
+
 
     useEffect(() => {
         getEvents().then(data => setEvents(data));
@@ -72,7 +74,7 @@ export const ParentContainerComponent = () => {
                             </div>
                             <div className="popular_event__location">Address: {event.location}</div>
                             <div className="popular_event__date">Taking place on: {event.date}</div>
-                            <button type="button" className='popular_event_button' onClick={() => navigate("/events")}>View Event</button>
+                            <button type="button" className='popular_event_button' onClick={() => navigate(`/single_event/${event.id}`)}>View Event</button>
 
                         </section>
                     )
