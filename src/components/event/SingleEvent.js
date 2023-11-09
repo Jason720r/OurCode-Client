@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { getEventById } from '../../managers/EventManager.js';
 import { useNavigate, useParams } from 'react-router-dom';
+import { getCurrentUser } from '../../managers/CoderManager.js';
 
 export const SingleEvent = () => {
     const { eventId } = useParams();
     const navigate = useNavigate();
+    const [currentUserId, setCurrentUserId] = useState(null);
     const [event, setSingleEvent] = useState({
         name: "",
         organizer: 0,
@@ -18,16 +20,19 @@ export const SingleEvent = () => {
     .then(event => {
         setSingleEvent({
             name: event.name,
-            organizer: event.organizer,
+            organizer: event.organizer.user,
             description: event.description,
             number_of_people: event.number_of_people,
             location: event.location,
             date: event.date
         })
+        getCurrentUser().then(user => setCurrentUserId(user.id))
     })
     },
     [eventId]);
 
+
+    
     return (
         <div className="single_event_wrapper">
             <article className="single_event">
