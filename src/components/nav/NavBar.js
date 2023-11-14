@@ -9,30 +9,35 @@ export const NavBar = () => {
             <li className="navbar__item">
             <Link className="nav-link" to="/latest-news/">
             <i className="fas fa-home"></i>
+            <div className="home">Home</div>
             <span></span>
         </Link> 
             </li>
             <li className="navbar__item">
             <Link className="nav-link" to="/projects">
             <i className="fas fa-edit"></i>
+            <div className="project_nav">Projects</div>
             <span></span>
         </Link>
             </li>
             <li className="navbar__item">
             <Link className="nav-link" to="/events">
             <i className="fas fa-calendar-alt"></i>
+            <div className="event_nav"> Events </div>
             <span></span>
         </Link>
         </li>
             <li className="navbar__item">
                 <Link className="nav-link" to="/event_form">
             <i className="fas fa-calendar-plus"></i>
+            <div className="event_create"> Create Event </div>
             <span></span>
         </Link>
                 
             </li>
             <li className="navbar__item">
                 <Link className="nav-link" to="/profile/:userId"><i className="fas fa-user"></i>
+                <div className="profile_nav">Profile</div>
                 <span></span>
                 </Link>
                 

@@ -31,13 +31,9 @@
     margin-bottom: 10px;
 }
 .project_title {
-    font-size: 1em;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #2e0949;
-    border: 2px solid #2e0949; /* Added border width and style */
-    padding: 5px; /* Added padding to give some space between the text and the border */
-    display: block;
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .project_creator {
