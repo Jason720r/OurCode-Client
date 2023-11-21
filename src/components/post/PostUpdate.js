@@ -74,7 +74,7 @@ export const PostUpdateForm = () => {
                         };
 
                         updatePost(postToUpdate)
-                            .then(() => navigate(`/posts`));
+                            .then(() => navigate(`/latest-news/`));
                     }}
                     className="customButton"
                     >
