@@ -15,14 +15,14 @@ export const ProjectList = (props) =>{
 
     return (
         <div className="project-wrapper">
-            <article className="projects">
+            <article className="projects_type">
                 {
                     projects.map(project => {
-                        return <section key={`project--${project.id}`} className="project_example">
-                            <div className="project_title">{project.title}</div>
+                        return <section key={`project_list--${project.id}`} className="project_example">
+                            <div className="project_titles">{project.title}</div>
                             <div className="description_header">Description:</div>
                             <div className="project_description">{project.description}</div>
-                            <div className="project_url">{project.url}</div>
+                            <div className="project_url">{project.url && <a href={project.url} target="_blank" rel="noopener noreferrer">{project.url}</a>}</div>
                             <div className="project_creator">{project.creator.user}</div>
                         </section>
                     })
